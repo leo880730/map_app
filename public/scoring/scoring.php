@@ -83,6 +83,23 @@
       </div>
       
     </main>
+    <script>
+      const valueSelector = document.querySelectorAll(".form-range");
+
+      for(let i = 0; i <=5; i++){
+        valueSelector[i].addEventListener("input", function(){
+          let inputValue = valueSelector[i].value;         
+          if(inputValue <= 1){
+            valueSelector[i].style.backgroundColor = "#f3dede"
+          } else if(inputValue <= 3 && inputValue >= 2){
+            valueSelector[i].style.backgroundColor = "#f1f1ac"
+          } else if(inputValue >= 4){
+            valueSelector[i].style.backgroundColor = "#d6f4cc"
+          }
+        })
+      }
+      
+    </script>
     <!-- popper -->
       <script src="https://unpkg.com/@popperjs/core@2" crossorigin="anonymous"></script>
       <!-- jQuery -->
