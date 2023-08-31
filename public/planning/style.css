@@ -98,3 +98,45 @@ main {
   border-radius: 12px;
   background-color: #ffffff;
 }
+
+/* RWD here */
+@media(min-width:768px) and (max-width:1199px) {
+  #previous-page-btn {
+    font-size: 48px;
+    margin-left: 3%;
+  }
+
+  .dropdown {
+    margin-right: 3%;
+  }
+
+  #dropdownMenuLink {
+    font-size: 28px;
+  }
+
+  .map-search-input-container {
+    right: -16%;
+  }
+
+  #search-bar-icon {
+    font-size: 28px;
+  }
+}
+
+@media(min-width: 1200px) {
+  .dropdown {
+    margin-right: 3%;
+  }
+
+  #dropdownMenuLink {
+    font-size: 24px;
+  }
+
+  .map-search-input-container {
+    right: -14%;
+  }
+
+  #search-bar-icon {
+    font-size: 22px;
+  }
+}
