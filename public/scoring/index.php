@@ -24,19 +24,27 @@
 
     <main>
       <div class="map-search-bar">
-        <div class="map-search-description-container">
-          <span class="search-description" id="road-search-description">路段</span>
-          <span class="search-description" id="origin-search-description">起點</span>
-          <span class="search-description" id="destination-search-description">終點</span>
+        <div class="search-bar-icon-container">
+          <i class="fa-solid fa-location-dot" id="search-bar-icon"></i>
         </div>
-        <div class="map-search-input-container">
+        <div class="road-input-container">
+          <div class="search-description" id="road-search-description">路段</div>
           <input type="text" class="map-search-input" id="road-input" >
-          <input type="text" class="map-search-input" id="origin-number-input">
+        </div>
+        <div class="origin-number-container">
+          <div class="search-description" id="origin-search-description">起點</div>
+            <input type="text" class="map-search-input" id="origin-number-input">          
+        </div>
+        <div id="map-search-input-span-container-1">
           <span class="map-search-input-span">號</span>
           <span class="map-search-input-span">-</span>
-          <input type="text" class="map-search-input" id="destination-number-input">
+        </div>
+        <div class="destination-number-container">
+          <div class="search-description" id="destination-search-description">終點</div>
+            <input type="text" class="map-search-input" id="destination-number-input">
+        </div>
+        <div id="map-search-input-span-container-2">
           <span class="map-search-input-span">號</span>
-          <i class="fa-solid fa-location-dot" id="search-bar-icon"></i>
         </div>
       </div>
       
