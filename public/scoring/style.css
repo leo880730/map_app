@@ -189,6 +189,7 @@ footer {
 
   .scoring-title {
     margin-left: 25%;
+    font-size: 48px;
   }
 
   #search-bar-icon {
@@ -321,8 +322,8 @@ footer {
 }
 
 h3 {
-  margin: -11% 25px 0 22px;
-  letter-spacing: 1.7em;
+  margin: -11% 0px 0 22px;
+  letter-spacing: 39px;
 }
 
 .submit-btn-container {
@@ -339,6 +340,96 @@ h3 {
   font-size: 24px;
   background-color: #efefef;
   margin-left: 60%;
+}
+
+/* RWD scoring page here */
+@media(min-width:768px) and (max-width:1199px) {
+  .personal-scoring-title {
+    margin-left: 25%;
+    font-size: 48px;
+  }
+
+  #home-btn {
+    font-size: 36px;
+    ;
+  }
+
+  .form-label {
+    writing-mode: horizontal-tb;
+    width: 16%;
+    font-size: 32px;
+    letter-spacing: 0.3em;
+    margin-top: 2%;
+  }
+
+  .range-item {
+    width: 80%;
+    transform: translate(0, 0);
+    margin-left: 0;
+    margin-right: 3%;
+  }
+
+  .form-range {
+    width: 580px;
+    padding: 0px 17px 30px 17px;
+  }
+
+  h3 {
+    margin: -8% 0px 0 30px;
+    letter-spacing: 90px;
+  }
+
+  #submit-btn {
+    font-size: 36px;
+    margin-left: 68%;
+  }
+}
+
+@media(min-width:1200px) {
+  .personal-scoring-title {
+    margin-left: 25%;
+    font-size: 48px;
+  }
+
+  #home-btn {
+    font-size: 36px;
+    ;
+  }
+
+  .range-section {
+    height: 80%;
+    margin-top: 6%;
+  }
+
+  .form-label {
+    writing-mode: horizontal-tb;
+    width: 16%;
+    font-size: 32px;
+    letter-spacing: 0.3em;
+    margin-top: 2%;
+  }
+
+  .range-item {
+    width: 80%;
+    transform: translate(0, 0);
+    margin-left: 0;
+    margin-right: 3%;
+  }
+
+  .form-range {
+    width: 600px;
+    padding: 0px 16px 30px 21px;
+  }
+
+  h3 {
+    margin: -7% 0px 0 32px;
+    letter-spacing: 92.5px;
+  }
+
+  #submit-btn {
+    font-size: 30px;
+    margin-left: 78%;
+  }
 }
 
 /* result page here */
@@ -393,4 +484,55 @@ h3 {
 .result-btn-description {
   margin: 0 auto;
   padding-top: 2px;
+}
+
+/* RWD result page here */
+@media(min-width:768px) and (max-width:1199px) {
+  .result-personal-scoring-title {
+    font-size: 48px;
+  }
+
+  .result-title-container {
+    margin-top: 25%
+  }
+
+  .result-title {
+    font-size: 38px;
+  }
+
+  .result-btn-container {
+    margin-top: 15%
+  }
+
+  .result-btn {
+    width: 330px;
+    height: 68px;
+    font-size: 28px;
+  }
+
+  ;
+}
+
+@media(min-width:1200px) {
+  .result-personal-scoring-title {
+    font-size: 48px;
+  }
+
+  .result-title-container {
+    margin-top: 16%
+  }
+
+  .result-title {
+    font-size: 38px;
+  }
+
+  .result-btn-container {
+    margin-top: 12%
+  }
+
+  .result-btn {
+    width: 330px;
+    height: 68px;
+    font-size: 28px;
+  }
 }
