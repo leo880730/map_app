@@ -18,8 +18,8 @@
 
     <main>
       <div class="result-title-container">
-        <h2 class="result-title">您已完成評分</h2>
-        <h2 class="result-title">感謝您為用路環境盡一份心力</h2>
+        <!-- <h2 class="result-title">您已完成評分</h2> -->
+        <!-- <h2 class="result-title">感謝您為用路環境盡一份心力</h2> -->
       </div>
       <div class="result-btn-container">
         <button type="button" class="result-btn" id="result-scoring-btn"
@@ -43,6 +43,20 @@
       
       
     </main>
+
+    <script>
+      let = scoringRoad = window.localStorage.getItem('road')
+      let = scoringOrigin = window.localStorage.getItem('origin')
+      let = scoringDestination = window.localStorage.getItem('destination')
+
+      let address = document.querySelector(".result-title-container")
+
+      address.innerHTML += `
+      <h2 class="result-title">已收到您對以下路段的評分</h2>
+      <h2> ${scoringRoad} ${scoringOrigin}號 - ${scoringDestination} 號</h2>
+      <h2 class="result-title">感謝您為用路環境盡一份心力</h2>
+      `
+    </script>
     <!-- popper -->
       <script src="https://unpkg.com/@popperjs/core@2" crossorigin="anonymous"></script>
       <!-- jQuery -->

@@ -268,11 +268,20 @@ footer {
 
 /* scoring page here */
 
+#address {
+  width: 90%;
+  margin-left: 2.5%;
+  height: 15%;
+  padding-top: 30px;
+  text-align: center;
+  font-size: 2em;
+}
+
 .range-section {
   margin-left: 2.5%;
   margin-top: 10%;
   width: 95%;
-  height: 80%;
+  height: 75%;
 }
 
 .range-container {
@@ -445,7 +454,7 @@ h3 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 40%
+  margin-top: 45%
 }
 
 .result-title {

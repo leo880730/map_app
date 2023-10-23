@@ -88,8 +88,8 @@
         <h1 class="footer-title">請選擇您要評分的路段！</h1>
       </div>
       <div class="scoring-button-container">
-        <button type="button" class="btn" id="scoring-button"
-        onclick="location.href='/map_demo/public/scoring/scoring.php'" >
+        <button type="button" class="btn" id="scoring-button">
+          <!-- onclick="location.href='/map_demo/public/scoring/scoring.php'"  -->
           開始評分
         </button>
       </div>
@@ -103,4 +103,27 @@
       <script src="./../js/bootstrap.min.js"></script>
       <script src="https://kit.fontawesome.com/dfe50b8167.js" crossorigin="anonymous"></script>
   </body>
+
+  <script>
+    let roadInput = document.querySelector('#road-input')
+    let originNumberInput = document.querySelector('#origin-number-input')
+    let destinationNumberInput = document.querySelector('#destination-number-input')
+    let scoringBtn = document.querySelector('#scoring-button')
+
+    scoringBtn.addEventListener('click', function () {
+      let roadInputValue = roadInput.value
+      let originNumberInputValue = originNumberInput.value
+      let destinationNumberInputValue = destinationNumberInput.value
+      if(roadInputValue.length == 0 || 
+         originNumberInputValue.length == 0 ||
+         destinationNumberInputValue.length == 0){
+          alert('請輸入路段地址！')
+         }else{
+            window.localStorage.setItem('road', roadInputValue)
+            window.localStorage.setItem('origin', originNumberInputValue)
+            window.localStorage.setItem('destination', destinationNumberInputValue)
+            location.href = '/map_demo/public/scoring/scoring.php'
+          }
+    })
+  </script>
 </html>

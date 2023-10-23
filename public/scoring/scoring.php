@@ -25,6 +25,8 @@
     </header>
 
     <main>
+
+    <div class="address"></div>
       <div class="range-section">
         <div class="range-container">
           <label for="flat-range" class="form-label">平坦</label>
@@ -84,6 +86,16 @@
       
     </main>
     <script>
+
+      let = scoringRoad = window.localStorage.getItem('road')
+      let = scoringOrigin = window.localStorage.getItem('origin')
+      let = scoringDestination = window.localStorage.getItem('destination')
+
+      let address = document.querySelector(".address")
+
+      address.innerHTML = `
+      <h1 id="address">${scoringRoad} ${scoringOrigin}號 - ${scoringDestination} 號</h1>`
+
       const valueSelector = document.querySelectorAll(".form-range");
 
       for(let i = 0; i <=5; i++){
