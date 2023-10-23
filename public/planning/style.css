@@ -83,7 +83,7 @@ main {
 #search-bar-icon {
   color: #252c74;
   position: absolute;
-  font-size: 16%;
+  font-size: 16px;
   top: 62%;
   right: 105%;
 }
