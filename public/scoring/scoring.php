@@ -19,6 +19,10 @@
   </head>
 
   <body>
+    <div class="loader">
+      <h1 id="wait">請稍候⋯</h1>
+      <h1 id="submit-error">系統錯誤，請重新整理網頁稍後再試</h1>
+    </div>
     <header>
       <nav>
         <button type="button" class="btn" id="previous-btn"
@@ -34,16 +38,15 @@
     </header>
 
     <main>
-
-    <div class="address"></div>
-      <div class="range-section">
-        <div class="range-container">
-          <label for="flat-range" class="form-label">平坦</label>
-          <div class="range-item">
-            <input type="range" class="form-range" min="0" max="5" step="1" value="0" id="flat-range">
-          <h3>012345</h3>
+      <div class="address"></div>
+        <div class="range-section">
+          <div class="range-container">
+            <label for="flat-range" class="form-label">平坦</label>
+            <div class="range-item">
+              <input type="range" class="form-range" min="0" max="5" step="1" value="0" id="flat-range">
+              <h3>012345</h3>
+            </div>
           </div>
-        </div>
 
         <div class="range-container">
           <label for="smooth-range" class="form-label">順暢</label>
@@ -90,23 +93,10 @@
         <button type="button" class="btn" id="submit-btn">提交評分
         </button>
         <!-- onclick="location.href='/map_demo/public/scoring/result.php'" -->
-
       </div>
       
     </main>
     <script>
-
-      // var express = require('express');
-      // var app = express();
-
-      // app.get('/', function (req, res) {
-      //   res.set('Access-Control-Allow-Origin', '*');
-      //   res.end('hello world');
-      // });
-
-      // app.listen(3000, function () {
-      //   console.log('Example app listening on port 3000!');
-      // });
 
       let road = window.localStorage.getItem('road')
       let origin = window.localStorage.getItem('origin')
@@ -135,6 +125,7 @@
       let submitBtn = document.querySelector('#submit-btn')
       
       function send(){
+        document.querySelector('.loader').style.display="block"
         // location.href='/map_demo/public/scoring/result.php'
 
         let road = window.localStorage.getItem('road')
@@ -163,8 +154,13 @@
           },
           success: function(response) {
             if(response == "Success"){
-              location.href='/map_demo/public/scoring/result.php'
+                location.href='/map_demo/public/scoring/result.php'
             }
+          },
+          error: function(){
+            // alert('系統錯誤，請重新整理網頁稍後再試！')
+            document.querySelector('#wait').style.display= "none"
+            document.querySelector('#submit-error').style.display= "block"
           },
         })
       }
