@@ -30,6 +30,18 @@ main {
   max-width: 820px;
   width: 100%;
   height: 91vh;
+  opacity: 0;
+  animation: emerge-anim 1500ms 1000ms 1 forwards;
+}
+
+@keyframes emerge-anim {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
 
 #previous-btn {
@@ -146,7 +158,9 @@ footer {
   height: 15vh;
   width: 100%;
   bottom: 0%;
-  max-width: 820px
+  max-width: 820px;
+  opacity: 0;
+  animation: emerge-anim 1500ms 500ms 1 forwards;
 }
 
 .footer-title-container {
@@ -351,6 +365,53 @@ h3 {
   margin-left: 60%;
 }
 
+.loader {
+  position: absolute;
+  transform: translate(-50%, 0);
+  left: 50%;
+  /* max-width: 820px; */
+  width: 100%;
+  height: 100%;
+  background-color: #000000;
+  opacity: 0.7;
+  z-index: 1;
+  display: none;
+  text-align: center;
+}
+
+#wait {
+  position: absolute;
+  color: #ffffff;
+  font-size: 40px;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+}
+
+#submit-error-1 {
+  display: none;
+  position: absolute;
+  color: #ffffff;
+  font-size: 28px;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 47%;
+  width: 80%;
+  opacity: 1;
+}
+
+#submit-error-2 {
+  display: none;
+  position: absolute;
+  color: #ffffff;
+  font-size: 28px;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 55%;
+  width: 90%;
+  opacity: 1;
+}
+
 /* RWD scoring page here */
 @media(min-width:768px) and (max-width:1199px) {
   .personal-scoring-title {
@@ -391,6 +452,18 @@ h3 {
   #submit-btn {
     font-size: 32px;
     margin-left: 68%;
+  }
+
+  #wait {
+    font-size: 60px;
+  }
+
+  #submit-error-1 {
+    font-size: 60px;
+  }
+
+  #submit-error-2 {
+    font-size: 60px;
   }
 }
 
@@ -438,6 +511,19 @@ h3 {
   #submit-btn {
     font-size: 30px;
     margin-left: 78%;
+  }
+
+  #wait {
+    font-size: 60px;
+  }
+
+  #submit-error-1 {
+    font-size: 60px;
+  }
+
+  #submit-error-2 {
+    font-size: 60px;
+    top: 58%;
   }
 }
 
@@ -544,37 +630,4 @@ h3 {
     height: 68px;
     font-size: 28px;
   }
-}
-
-.loader {
-  position: absolute;
-  transform: translate(-50%, 0);
-  left: 50%;
-  /* max-width: 820px; */
-  width: 100%;
-  height: 100%;
-  background-color: #000000;
-  opacity: 0.7;
-  z-index: 1;
-  display: none;
-  text-align: center;
-}
-
-#wait {
-  position: absolute;
-  color: #ffffff;
-  font-size: 60px;
-  transform: translate(-50%, -50%);
-  left: 50%;
-  top: 50%;
-}
-
-#submit-error {
-  display: none;
-  position: absolute;
-  color: #ffffff;
-  font-size: 60px;
-  transform: translate(-50%, -50%);
-  left: 50%;
-  top: 50%;
 }
