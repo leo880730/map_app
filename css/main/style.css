@@ -94,6 +94,12 @@ h3 {
 }
 
 /* RWD here */
+@media (max-width: 374px) {
+  .btn {
+    font-size: 16px;
+    padding: 18px 12px;
+  }
+}
 
 @media(min-width:768px) and (max-width:1199px) {
   .app_name {
