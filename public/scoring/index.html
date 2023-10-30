@@ -10,13 +10,13 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
     crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="/map_demo/public/scoring/style.css" />
+  <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
   <header>
     <nav>
-      <button type="button" class="btn" id="previous-btn" onclick="location.href='/map_demo/public/index.html'">
+      <button type="button" class="btn" id="previous-btn" onclick="location.href='./../index.html'">
         <i class="fa-solid fa-arrow-left"></i>
       </button>
 
@@ -93,7 +93,7 @@
     </div>
     <div class="scoring-button-container">
       <button type="button" class="btn" id="scoring-button">
-        <!-- onclick="location.href='/map_demo/public/scoring/scoring.html'"  -->
+        <!-- onclick="location.href='.scoring.html'"  -->
         開始評分
       </button>
     </div>
@@ -127,7 +127,7 @@
       window.localStorage.setItem('road', roadInputValue)
       window.localStorage.setItem('origin', originNumberInputValue)
       window.localStorage.setItem('destination', destinationNumberInputValue)
-      location.href = '/map_demo/public/scoring/scoring.html'
+      location.href = './scoring.html'
     }
   })
 </script>
