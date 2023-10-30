@@ -5,6 +5,7 @@ body {
   background: linear-gradient(110deg, #e6f2fc 52%, #cee7f6 52%);
   background-repeat: no-repeat;
   overflow-y: scroll;
+  /* border: 1px solid #000000; */
 }
 
 header {
@@ -164,8 +165,8 @@ footer {
 }
 
 .footer-title-container {
-  border-top: 1.5px solid;
-  border-bottom: 1.5px solid;
+  border-top: 1.5px solid #888888;
+  border-bottom: 1.5px solid #888888;
   height: 46%;
 }
 
@@ -196,6 +197,21 @@ footer {
 }
 
 /* index RWD here */
+@media(max-width: 374px) {
+  .search-description {
+    font-size: 12px;
+  }
+
+  .footer-title {
+    font-size: 17px;
+    margin-top: 3%;
+  }
+
+  #scoring-button {
+    font-size: 20px;
+  }
+}
+
 @media(min-width:768px) and (max-width:1199px) {
   #previous-btn {
     font-size: 38px;
@@ -413,6 +429,50 @@ h3 {
 }
 
 /* RWD scoring page here */
+
+@media(max-width: 374px) {
+  #wait {
+    font-size: 36px;
+    width: 80%;
+  }
+
+  .personal-scoring-title {
+    font-size: 32px;
+  }
+
+  #address {
+    font-size: 1.2em;
+  }
+
+  .range-section {
+    width: 60%;
+    margin-top: 6%
+  }
+
+  .form-label {
+    font-size: 18px
+  }
+
+  .range-item {
+    width: 80%;
+    left: 0
+  }
+
+  .form-range {
+    width: 220px;
+  }
+
+  h3 {
+    margin: -23% 0px 0px 22px;
+    letter-spacing: 24px;
+  }
+
+  #submit-btn {
+    font-size: 20px;
+    margin-left: 56%;
+  }
+}
+
 @media(min-width:768px) and (max-width:1199px) {
   .personal-scoring-title {
     margin-left: 25%;
@@ -582,6 +642,30 @@ h3 {
 }
 
 /* RWD result page here */
+
+@media(max-width: 374px) {
+  .result-personal-scoring-title {
+    font-size: 30px;
+  }
+
+  .result-title {
+    font-size: 20px;
+  }
+
+  .result-btn {
+    box-shadow: 4px 4px 0px #252c74;
+    border: 2px solid #252c74;
+    font-size: 18px;
+    width: 228px;
+    height: 52px;
+    margin-bottom: 7%;
+  }
+
+  .result-btn-description {
+    padding-top: 2px
+  }
+}
+
 @media(min-width:768px) and (max-width:1199px) {
   .result-personal-scoring-title {
     font-size: 48px;
