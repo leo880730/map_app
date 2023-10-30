@@ -97,7 +97,8 @@
     <!-- popper -->
       <script src="https://unpkg.com/@popperjs/core@2" crossorigin="anonymous"></script>
       <!-- jQuery -->
-      <script src="./../js/jquery-3.1.0.min.js"></script>
+      <script src="https://code.jquery.com/jquery-3.7.1.js"
+      integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
       <!-- Bootstrap -->
       <script src="./../js/bootstrap.bundle.min.js"></script>
       <script src="./../js/bootstrap.min.js"></script>

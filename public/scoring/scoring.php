@@ -7,6 +7,15 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/map_demo/public/scoring/style.css" />
+    <!-- popper -->
+    <!-- <script src="https://unpkg.com/@popperjs/core@2" crossorigin="anonymous"></script> -->
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+  crossorigin="anonymous"></script>
+    <!-- Bootstrap -->
+    <script src="./../js/bootstrap.bundle.min.js"></script>
+    <script src="./../js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/dfe50b8167.js" crossorigin="anonymous"></script>
   </head>
 
   <body>
@@ -78,23 +87,35 @@
       </div>
 
       <div class="submit-btn-container">
-        <button type="button" class="btn" id="submit-btn"
-         onclick="location.href='/map_demo/public/scoring/result.php'">提交評分
+        <button type="button" class="btn" id="submit-btn">提交評分
         </button>
+        <!-- onclick="location.href='/map_demo/public/scoring/result.php'" -->
 
       </div>
       
     </main>
     <script>
 
-      let = scoringRoad = window.localStorage.getItem('road')
-      let = scoringOrigin = window.localStorage.getItem('origin')
-      let = scoringDestination = window.localStorage.getItem('destination')
+      // var express = require('express');
+      // var app = express();
 
-      let address = document.querySelector(".address")
+      // app.get('/', function (req, res) {
+      //   res.set('Access-Control-Allow-Origin', '*');
+      //   res.end('hello world');
+      // });
+
+      // app.listen(3000, function () {
+      //   console.log('Example app listening on port 3000!');
+      // });
+
+      let road = window.localStorage.getItem('road')
+      let origin = window.localStorage.getItem('origin')
+      let destination = window.localStorage.getItem('destination')
+
+      let address = document.querySelector('.address')
 
       address.innerHTML = `
-      <h1 id="address">${scoringRoad} ${scoringOrigin}號 - ${scoringDestination} 號</h1>`
+      <h1 id="address">${road} ${origin}號 - ${destination} 號</h1>`
 
       const valueSelector = document.querySelectorAll(".form-range");
 
@@ -110,15 +131,46 @@
           }
         })
       }
+
+      let submitBtn = document.querySelector('#submit-btn')
+      
+      function send(){
+        // location.href='/map_demo/public/scoring/result.php'
+
+        let road = window.localStorage.getItem('road')
+        let origin = window.localStorage.getItem('origin')
+        let destination = window.localStorage.getItem('destination')
+        let flat = document.querySelector('#flat-range').value;
+        let smooth = document.querySelector('#smooth-range').value;
+        let wide = document.querySelector('#wide-range').value;
+        let lighting = document.querySelector('#lighting-range').value;
+        let looks = document.querySelector('#looks-range').value;
+        let plant = document.querySelector('#plant-range').value;
+
+        $.ajax({
+          url: "https://script.google.com/macros/s/AKfycbytDlom0QPS0k-BKRqY1mh6AU45_rESFUCb1G0AAmaLbWMaP10jpFWCY_xcRuAY-ZIGgQ/exec",
+          data: {
+            "road": road,
+            "origin": origin,
+            "destination": destination,
+            "flat": flat,
+            "smooth": smooth,
+            "wide": wide,
+            "lighting": lighting,
+            "looks": looks,
+            "plant": plant,
+            
+          },
+          success: function(response) {
+            if(response == "Success"){
+              location.href='/map_demo/public/scoring/result.php'
+            }
+          },
+        })
+      }
+
+      submitBtn.addEventListener('click', send)
       
     </script>
-    <!-- popper -->
-      <script src="https://unpkg.com/@popperjs/core@2" crossorigin="anonymous"></script>
-      <!-- jQuery -->
-      <script src="./../js/jquery-3.1.0.min.js"></script>
-      <!-- Bootstrap -->
-      <script src="./../js/bootstrap.bundle.min.js"></script>
-      <script src="./../js/bootstrap.min.js"></script>
-      <script src="https://kit.fontawesome.com/dfe50b8167.js" crossorigin="anonymous"></script>
   </body>
 </html>
