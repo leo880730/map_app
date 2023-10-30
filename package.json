@@ -1,0 +1,16 @@
+{
+  "name": "map_demo",
+  "version": "1.0.0",
+  "description": "google map 提供了道路規劃的功能，讓我們能輕易選擇兩點之間最方便快速的路徑。然而，快速有時卻不一定是人們的第一考量。",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "gh-pages"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "gh-pages": "^6.0.0"
+  }
+}
