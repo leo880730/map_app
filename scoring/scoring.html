@@ -24,7 +24,8 @@
 <body>
   <div class="loader">
     <h1 id="wait">請稍候⋯</h1>
-    <h1 id="submit-error">系統錯誤，請重新整理網頁稍後再試</h1>
+    <h1 id="submit-error-1">系統錯誤</h1>
+    <h1 id="submit-error-2">請重新整理網頁稍後再試</h1>
   </div>
   <header>
     <nav>
@@ -161,7 +162,8 @@
         error: function () {
           // alert('系統錯誤，請重新整理網頁稍後再試！')
           document.querySelector('#wait').style.display = "none"
-          document.querySelector('#submit-error').style.display = "block"
+          document.querySelector('#submit-error-1').style.display = "block"
+          document.querySelector('#submit-error-2').style.display = "block"
         },
       })
     }
