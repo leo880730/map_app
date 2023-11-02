@@ -101,13 +101,13 @@
   <script>
 
     let road = window.localStorage.getItem('road')
-    let origin = window.localStorage.getItem('origin')
-    let destination = window.localStorage.getItem('destination')
+    // let origin = window.localStorage.getItem('origin')
+    // let destination = window.localStorage.getItem('destination')
 
     let address = document.querySelector('.address')
 
     address.innerHTML = `
-      <h1 id="address">${road} ${origin}號 - ${destination} 號</h1>`
+      <h1 id="address">${road}</h1>`
 
     const valueSelector = document.querySelectorAll(".form-range");
 
@@ -131,8 +131,8 @@
       // location.href='./result.html'
 
       let road = window.localStorage.getItem('road')
-      let origin = window.localStorage.getItem('origin')
-      let destination = window.localStorage.getItem('destination')
+      // let origin = window.localStorage.getItem('origin')
+      // let destination = window.localStorage.getItem('destination')
       let flat = document.querySelector('#flat-range').value;
       let smooth = document.querySelector('#smooth-range').value;
       let wide = document.querySelector('#wide-range').value;
@@ -149,8 +149,8 @@
 
         data: {
           "road": road,
-          "origin": origin,
-          "destination": destination,
+          // "origin": origin,
+          // "destination": destination,
           "flat": flat,
           "smooth": smooth,
           "wide": wide,
