@@ -11,6 +11,14 @@
     integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
     crossorigin="anonymous"></script>
   <link rel="stylesheet" href="./style.css">
+  <!-- popper -->
+  <!-- <script src="https://unpkg.com/@popperjs/core@2" crossorigin="anonymous"></script> -->
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.7.1.js" crossorigin="anonymous"></script>
+  <!-- Bootstrap -->
+  <script src="./../js/bootstrap.bundle.min.js"></script>
+  <script src="./../js/bootstrap.min.js"></script>
+  <script src="https://kit.fontawesome.com/dfe50b8167.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -31,24 +39,24 @@
         <i class="fa-solid fa-location-dot" id="search-bar-icon"></i>
       </div>
       <div class="road-input-container">
-        <div class="search-description" id="road-search-description">路段</div>
-        <input type="text" class="map-search-input" id="road-input">
+        <!-- <div class="search-description" id="road-search-description">路段</div> -->
+        <input class="map-search-input" id="road-input" placeholder="輸入路段">
       </div>
-      <div class="origin-number-container">
+      <!-- <div class="origin-number-container">
         <div class="search-description" id="origin-search-description">起點</div>
         <input type="text" class="map-search-input" id="origin-number-input">
-      </div>
-      <div id="map-search-input-span-container-1">
+      </div> -->
+      <!-- <div id="map-search-input-span-container-1">
         <span class="map-search-input-span">號</span>
         <span class="map-search-input-span">-</span>
-      </div>
-      <div class="destination-number-container">
+      </div> -->
+      <!-- <div class="destination-number-container">
         <div class="search-description" id="destination-search-description">終點</div>
         <input type="text" class="map-search-input" id="destination-number-input">
-      </div>
-      <div id="map-search-input-span-container-2">
+      </div> -->
+      <!-- <div id="map-search-input-span-container-2">
         <span class="map-search-input-span">號</span>
-      </div>
+      </div> -->
     </div>
 
     <div class="map-container" id="map">
@@ -56,6 +64,7 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script>
+
       function initMap() {
         if (navigator.geolocation) {
           navigator.geolocation.getCurrentPosition(function (position) {
@@ -74,6 +83,66 @@
             });
             map.setZoom(16);
             map.setCenter(pos);
+
+            const autocomplete = new google.maps.places.Autocomplete(
+              document.getElementById('road-input'),
+              // document.querySelector('#origin-number-input'),
+              {
+                types: ['route'],
+                bounds: {
+                  east: pos.lng + 0.1,
+                  west: pos.lng - 0.1,
+                  south: pos.lat - 0.1,
+                  north: pos.lat + 0.1,
+                },
+                strictBounds: false,
+              }
+            );
+            autocomplete.addListener('place_changed', function () {
+              const place = autocomplete.getPlace();
+              // console.log(place)
+              map.setCenter(place.geometry.location)
+              marker.setPosition(place.geometry.location)
+
+              // let directionService = new google.maps.directionService();
+
+              // let origin = document.querySelector('#origin-number-input').value
+              // let destination = document.querySelector('#destination-number-input').value
+              // let road = document.querySelector('#road-input').value
+              // $.ajax({
+              //   url: `https://maps.googleapis.com/maps/api/geocode/json?address=${road}+${origin}&key=AIzaSyBbNQvY6xQyNdxOrYl9aQFzN76u9AH30n8&callback=initMap`,
+              //   success: function (data) {
+              //     let originLat = data.results[0].geometry.location.lat
+              //     let originLng = data.results[0].geometry.location.lng
+              //     console.log(originLat)
+              //   },
+              //   error: function () {
+              //     consol.log("error")
+              //   }
+              // }, {
+              //   url: `https://maps.googleapis.com/maps/api/geocode/json?address=${road}+${destination}&key=AIzaSyBbNQvY6xQyNdxOrYl9aQFzN76u9AH30n8&callback=initMap`,
+              //   success: function (data2) {
+              //     let destinationLat = data2.results[0].geometry.location.lat
+              //     let destinationLng = data2.results[0].geometry.location.lng
+              //     console.log(destinationLat)
+              //   },
+              //   error: function () {
+              //     consol.log("error")
+              //   }
+              // }
+              // )
+              // console.log(originLat)
+              // console.log(destinationLat)
+              // let directionRenderer = new google.maps.directionRenderer({
+              //   map: map,
+              // })
+              // directionRenderer.set('direction', null);
+              // directionService.route({
+              //   origin:
+              // }
+              // )
+
+            })
           });
         } else {
           // Browser doesn't support Geolocation
@@ -81,8 +150,8 @@
         }
       }
     </script>
-    <script async defer
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBbNQvY6xQyNdxOrYl9aQFzN76u9AH30n8&callback=initMap">
+    <script async
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBbNQvY6xQyNdxOrYl9aQFzN76u9AH30n8&libraries=places&callback=initMap">
       </script>
 
   </main>
@@ -98,15 +167,6 @@
       </button>
     </div>
   </footer>
-  <!-- popper -->
-  <script src="https://unpkg.com/@popperjs/core@2" crossorigin="anonymous"></script>
-  <!-- jQuery -->
-  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-    crossorigin="anonymous"></script>
-  <!-- Bootstrap -->
-  <script src="./../js/bootstrap.bundle.min.js"></script>
-  <script src="./../js/bootstrap.min.js"></script>
-  <script src="https://kit.fontawesome.com/dfe50b8167.js" crossorigin="anonymous"></script>
 </body>
 
 <script>
