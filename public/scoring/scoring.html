@@ -141,7 +141,12 @@
       let plant = document.querySelector('#plant-range').value;
 
       $.ajax({
-        url: "https://script.google.com/macros/s/AKfycbx5swZZQDSqb9mc04qQ0csmZqjfYYnqV50BdN843aP8WAE0wHbVcb1bGiOVgXeCk7Gv/exec",
+        //正式版
+        // url: "https://script.google.com/macros/s/AKfycbx5swZZQDSqb9mc04qQ0csmZqjfYYnqV50BdN843aP8WAE0wHbVcb1bGiOVgXeCk7Gv/exec",
+
+        //測試版
+        url: "https://script.google.com/macros/s/AKfycbytDlom0QPS0k-BKRqY1mh6AU45_rESFUCb1G0AAmaLbWMaP10jpFWCY_xcRuAY-ZIGgQ/exec",
+
         data: {
           "road": road,
           "origin": origin,
