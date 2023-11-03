@@ -11,6 +11,14 @@
     integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
     crossorigin="anonymous"></script>
   <link rel="stylesheet" href="./style.css" />
+  <!-- popper -->
+  <script src="https://unpkg.com/@popperjs/core@2" crossorigin="anonymous"></script>
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.7.1.js" crossorigin="anonymous"></script>
+  <!-- Bootstrap -->
+  <script src="./../js/bootstrap.bundle.min.js"></script>
+  <script src="./../js/bootstrap.min.js"></script>
+  <script src="https://kit.fontawesome.com/dfe50b8167.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -46,26 +54,18 @@
   </main>
 
   <script>
-    let = scoringRoad = window.localStorage.getItem('road')
-    // let = scoringOrigin = window.localStorage.getItem('origin')
-    // let = scoringDestination = window.localStorage.getItem('destination')
+    let city = window.localStorage.getItem('city')
+    let district = window.localStorage.getItem('district')
+    let road = window.localStorage.getItem('road')
 
     let address = document.querySelector(".result-title-container")
 
     address.innerHTML += `
       <h2 class="result-title">已收到您對以下路段的評分</h2>
-      <h2> ${scoringRoad}</h2>
+      <h2> ${city} ${district} ${road}</h2>
       <h2 class="result-title">感謝您為用路環境盡一份心力</h2>
       `
   </script>
-  <!-- popper -->
-  <script src="https://unpkg.com/@popperjs/core@2" crossorigin="anonymous"></script>
-  <!-- jQuery -->
-  <script src="./../js/jquery-3.1.0.min.js"></script>
-  <!-- Bootstrap -->
-  <script src="./../js/bootstrap.bundle.min.js"></script>
-  <script src="./../js/bootstrap.min.js"></script>
-  <script src="https://kit.fontawesome.com/dfe50b8167.js" crossorigin="anonymous"></script>
 </body>
 
 </html>
