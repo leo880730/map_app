@@ -11,6 +11,12 @@
     integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
     crossorigin="anonymous"></script>
   <link rel="stylesheet" href="./style.css">
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.7.1.js" crossorigin="anonymous"></script>
+  <!-- Bootstrap -->
+  <script src="./../js/bootstrap.bundle.min.js"></script>
+  <script src="./../js/bootstrap.min.js"></script>
+  <script src="https://kit.fontawesome.com/dfe50b8167.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -91,6 +97,7 @@
                   north: currentPos.lat + 0.1,
                 },
                 strictBounds: false,
+                componentRestrictions: { country: "tw" },
               }
             );
             autocomplete.addListener('place_changed', function () {
@@ -138,16 +145,14 @@
     <script async defer
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBbNQvY6xQyNdxOrYl9aQFzN76u9AH30n8&libraries=places&callback=initMap">
       </script>
+    <script>
+      let filterAlert = document.querySelector("#dropdownMenuLink")
+      filterAlert.addEventListener('click', function () {
+        alert('目前尚未累積足夠資料，故無法提供路段指標篩選服務。')
+      })
+    </script>
 
   </main>
-  <!-- popper -->
-  <script src="https://unpkg.com/@popperjs/core@2" crossorigin="anonymous"></script>
-  <!-- jQuery -->
-  <script src="https://code.jquery.com/jquery-3.7.1.js" crossorigin="anonymous"></script>
-  <!-- Bootstrap -->
-  <script src="./../js/bootstrap.bundle.min.js"></script>
-  <script src="./../js/bootstrap.min.js"></script>
-  <script src="https://kit.fontawesome.com/dfe50b8167.js" crossorigin="anonymous"></script>
 </body>
 
 </html>

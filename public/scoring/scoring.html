@@ -11,8 +11,6 @@
     integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
     crossorigin="anonymous"></script>
   <link rel="stylesheet" href="./style.css" />
-  <!-- popper -->
-  <!-- <script src="https://unpkg.com/@popperjs/core@2" crossorigin="anonymous"></script> -->
   <!-- jQuery -->
   <script src="https://code.jquery.com/jquery-3.7.1.js" crossorigin="anonymous"></script>
   <!-- Bootstrap -->
@@ -100,14 +98,14 @@
   </main>
   <script>
 
+    let city = window.localStorage.getItem('city')
+    let district = window.localStorage.getItem('district')
     let road = window.localStorage.getItem('road')
-    // let origin = window.localStorage.getItem('origin')
-    // let destination = window.localStorage.getItem('destination')
 
     let address = document.querySelector('.address')
 
     address.innerHTML = `
-      <h1 id="address">${road}</h1>`
+      <h1 id="address">${city} ${district} ${road}</h1>`
 
     const valueSelector = document.querySelectorAll(".form-range");
 
@@ -130,9 +128,9 @@
       document.querySelector('.loader').style.display = "block"
       // location.href='./result.html'
 
-      let road = window.localStorage.getItem('road')
-      // let origin = window.localStorage.getItem('origin')
-      // let destination = window.localStorage.getItem('destination')
+      // let city = window.localStorage.getItem('city')
+      // let district = window.localStorage.getItem('district')
+      // let road = window.localStorage.getItem('road')
       let flat = document.querySelector('#flat-range').value;
       let smooth = document.querySelector('#smooth-range').value;
       let wide = document.querySelector('#wide-range').value;
@@ -145,12 +143,12 @@
         // url: "https://script.google.com/macros/s/AKfycbx5swZZQDSqb9mc04qQ0csmZqjfYYnqV50BdN843aP8WAE0wHbVcb1bGiOVgXeCk7Gv/exec",
 
         //測試版
-        url: "https://script.google.com/macros/s/AKfycbytDlom0QPS0k-BKRqY1mh6AU45_rESFUCb1G0AAmaLbWMaP10jpFWCY_xcRuAY-ZIGgQ/exec",
+        url: "https://script.google.com/macros/s/AKfycbzsEfXfVA6at8CKBnV3OAX7lhBPg7nCAbfCohwWGoH6UM81jV6LEscWHIQedhsZcF5bVg/exec",
 
         data: {
+          "city": city,
+          "district": district,
           "road": road,
-          // "origin": origin,
-          // "destination": destination,
           "flat": flat,
           "smooth": smooth,
           "wide": wide,
